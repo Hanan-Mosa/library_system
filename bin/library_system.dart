@@ -15,7 +15,6 @@ library.addBook(book1);
 library.addBook(book2);
 library.addUser(user1);
 library.addUser(user2);
-library.displayLibraryInfo();
 
 library.borrowBook('1', 1);
 library.displayLibraryInfo();
