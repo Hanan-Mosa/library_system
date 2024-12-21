@@ -8,7 +8,7 @@ class User{
 
   //method
   void displayUserInfo(){
-    print('ID : $id \n Name : $name');
+    print('ID : $id \nName : $name');
     print('-----------------------');
   }
 
