@@ -26,8 +26,23 @@ class Library{
   }
   }
 
-  borrowBook(Book book){
-  book.isBorrow = true;
+  borrowBook(String bookId , String userId){
+    // check if book is already existed in list
+   Book? book = books.firstWhere((element) => element.bookId == bookId);
+   User? user = users.firstWhere((element) => element.id == userId);
+
+   if(book != null && book.isBorrow == false){
+     if(user !=null){
+     book.isBorrow = true ;
+     print('Book with ID $bookId borrowed');
+   }else{
+      users.add(user);
+      book.isBorrow = true ;
+      print('Book with ID $bookId borrowed');
+  }
+   }else{
+     print('Book is not found or already borrowed');
+   }
   }
   void displayLibraryInfo(){
    print('Library Information');
