@@ -4,10 +4,13 @@ import 'user.dart';
 import 'book.dart';
 
 class Library{
-  List<User> users ;
-  List<Book> books;
+ late List<User> users ;
+ late List<Book> books;
 
-  Library(this.users ,this.books );
+  Library(){
+    users =[];
+    books =[];
+  }
 
  void addBook(Book book){
     books.add(book);
@@ -40,13 +43,13 @@ class Library{
    if(book.bookId.isNotEmpty && book.isBorrow == false){
      if(user.id != -1){
      book.isBorrow = true ;
-     print('Book with ID $bookId borrowed');
+     print('Book with ID $bookId borrowed by User with ID :$userId');
    }else{
-       print('Please , enter your name');
+       print(" It's your first time here,\nPlease , enter your name");
       String name = stdin.readLineSync()!;
       users.add(User(userId,name));
       book.isBorrow = true ;
-      print('Book with ID $bookId borrowed');
+      print('Book with ID $bookId borrowed by User with ID :$userId');
   }
    }else{
      print('Book is not found or already borrowed');
