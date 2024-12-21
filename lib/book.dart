@@ -9,8 +9,8 @@ class Book{
   // method
   void displayBookInfo(){
     print('Book ID :$bookId\n'
-        ' Book Title : $bookTitle\n '
-        'isBorrow $isBorrow');
+        'Book Title : $bookTitle\n'
+        'isBorrow : $isBorrow');
     print('-----------------------');
   }
 
